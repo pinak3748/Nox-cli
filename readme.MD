@@ -64,9 +64,9 @@ go get -u github.com/yourusername/nox
 
 You can download the pre-built Nox CLI binaries from the binary/ folder. Choose the version that matches your operating system:
 
-- Windows: nox_v0.1_windows_amd64.exe
-- macOS (Intel): nox_v0.1_mac_amd64
-- macOS (Apple Silicon): nox_v0.1_mac_arm64
+- [Windows: nox_v0.1_windows_amd64.exe](binary/nox_v0.1_windows_amd64.exe)
+- [macOS (Intel): nox_v0.1_mac_amd64](binary/nox_v0.1_mac_amd64)
+- [macOS (Apple Silicon): nox_v0.1_mac_arm64](binary/nox_v0.1_mac_arm64)
 
 ## 🖐️ Want to Contribute?
 
