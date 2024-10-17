@@ -5,7 +5,7 @@ import (
 )
 
 func GenerateIndexContent(name string) string {
-	return fmt.Sprintf(`import %s from './modules/index.tsx';
+	return fmt.Sprintf(`import %s from './modules';
 
 export default %s;
 `, name, name)

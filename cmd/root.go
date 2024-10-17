@@ -22,7 +22,8 @@ var rootCmd = &cobra.Command{
 		if pageName != "" {
 			packages.Page(strings.ToLower(pageName))
 		} else {
-			packages.Page(strings.ToLower(pageName))
+			fmt.Println("Welcome to Nox! I’m here to help you with your web projects. 🚀")
+			fmt.Println("Type 'nox --help' to see what I can do for you.")
 		}
 	},
 }

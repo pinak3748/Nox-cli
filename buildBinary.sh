@@ -13,6 +13,6 @@ echo "Building Nox for Mac (Intel)..."
 GOOS=darwin GOARCH=amd64 go build -o binary/nox_${VERSION}_mac_amd64
 
 echo "Building Nox for Mac (M1)..."
-GOOS=darwin GOARCH=arm64 go build -o binary/nox_${VERSION}_mac_arm64
+GOOS=darwin GOARCH=arm64 go build -o binary/nox
 
 echo "Build complete! Binaries stored in the 'binary' folder."

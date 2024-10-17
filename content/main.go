@@ -13,7 +13,7 @@ interface {pageName}Props {
 
 const {pageName}: React.FC<{pageName}Props> = () => {
   return (
-    <div className={styles.container}>
+    <div className={"container"}>
       <h1>{pageName}</h1>
       <p>Welcome to the {pageName} page!</p>
       {/* Add your page content here */}

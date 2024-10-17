@@ -5,22 +5,25 @@ import (
 )
 
 func GenerateSliceContent(pageName string) string {
+
+	smallCasePageName := strings.ToLower(pageName)
+
 	template := `import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { {pageName}Item } from '../../../constants/types';
+import { {smallCasePageName}Item } from './{smallCasePageName}Types';
 import {
   create{pageName},
   delete{pageName},
   get{pageName},
   get{pageName}s,
   update{pageName},
-} from './{pageName}Action';
+} from './{smallCasePageName}Action';
 
 interface {pageName}State {
-  items: {pageName}Item[];
-  currentItem: {pageName}Item | null;
+  items: {smallCasePageName}Item[];
+  currentItem: {smallCasePageName}Item | null;
   loading: boolean;
   error: string | null;
-  selectedItem: {pageName}Item | null;
+  selectedItem: {smallCasePageName}Item | null;
 }
 
 const initialState: {pageName}State = {
@@ -35,7 +38,7 @@ const {pageName}Slice = createSlice({
   name: '{pageName}',
   initialState,
   reducers: {
-    setSelected{pageName}: (state, action: PayloadAction<{pageName}Item | null>) => {
+    setSelected{pageName}: (state, action: PayloadAction<{smallCasePageName}Item | null>) => {
       state.selectedItem = action.payload;
     },
   },
@@ -45,7 +48,7 @@ const {pageName}Slice = createSlice({
         state.loading = true;
         state.error = null;
       })
-      .addCase(create{pageName}.fulfilled, (state, action: PayloadAction<{pageName}Item>) => {
+      .addCase(create{pageName}.fulfilled, (state, action: PayloadAction<{smallCasePageName}Item>) => {
         state.loading = false;
         state.items.push(action.payload);
       })
@@ -57,7 +60,7 @@ const {pageName}Slice = createSlice({
         state.loading = true;
         state.error = null;
       })
-      .addCase(get{pageName}s.fulfilled, (state, action: PayloadAction<{pageName}Item[]>) => {
+      .addCase(get{pageName}s.fulfilled, (state, action: PayloadAction<{smallCasePageName}Item[]>) => {
         state.loading = false;
         state.items = action.payload;
       })
@@ -69,7 +72,7 @@ const {pageName}Slice = createSlice({
         state.loading = true;
         state.error = null;
       })
-      .addCase(get{pageName}.fulfilled, (state, action: PayloadAction<{pageName}Item>) => {
+      .addCase(get{pageName}.fulfilled, (state, action: PayloadAction<{smallCasePageName}Item>) => {
         state.loading = false;
         state.currentItem = action.payload;
       })
@@ -81,7 +84,7 @@ const {pageName}Slice = createSlice({
         state.loading = true;
         state.error = null;
       })
-      .addCase(update{pageName}.fulfilled, (state, action: PayloadAction<{pageName}Item>) => {
+      .addCase(update{pageName}.fulfilled, (state, action: PayloadAction<{smallCasePageName}Item>) => {
         state.loading = false;
         const index = state.items.findIndex(
           (item) => item.id === action.payload.id
@@ -120,6 +123,8 @@ const {pageName}Slice = createSlice({
 export const { setSelected{pageName} } = {pageName}Slice.actions;
 export default {pageName}Slice.reducer;
 `
+	finalCopy := strings.ReplaceAll(template, "{pageName}", pageName)
+	finalCopy = strings.ReplaceAll(finalCopy, "{smallCasePageName}", smallCasePageName)
+	return finalCopy
 
-	return strings.ReplaceAll(template, "{pageName}", pageName)
 }
