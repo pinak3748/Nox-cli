@@ -90,7 +90,7 @@ func Init(projectName string) {
 	}
 
 	// Clone a repository
-	var githubRepo = "https://github.com/Ionio-io/seed-ui.git"
+	var githubRepo = "https://github.com/pinak3748/Seed-UI.git"
 
 	// Check if the "client" directory exists at the root level
 	if _, err := os.Stat("client"); os.IsNotExist(err) {
