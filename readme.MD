@@ -55,10 +55,11 @@ go get -u github.com/yourusername/nox
   - `--version` or `-v`: Tells you what version of Nox you’re rocking.
 
 ### 💡 Future Ideas:
-[ ] Dynamic component creation (because why stop at pages?).
-[ ] Alias support (because who doesn’t love shortcuts?).
-[ ] Specify output directories and templates.
-[ ] Improved `init` command to set up project type, package manager, and more.
+
+- [ ] Dynamic component creation (because why stop at pages?).
+- [ ] Alias support (because who doesn’t love shortcuts?).
+- [ ] Specify output directories and templates.
+- [ ] Improved `init` command to set up project type, package manager, and more.
 
 ## 📦 Download the CLI
 
